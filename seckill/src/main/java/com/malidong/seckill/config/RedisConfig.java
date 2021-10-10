@@ -24,5 +24,6 @@ public class RedisConfig {
         //注入连接工厂
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         return redisTemplate;
+
     }
 }
