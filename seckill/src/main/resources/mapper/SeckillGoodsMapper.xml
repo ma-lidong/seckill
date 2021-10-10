@@ -11,6 +11,10 @@
         <result column="start_date" property="startDate" />
         <result column="end_date" property="endDate" />
     </resultMap>
-
-
+    <update id="updateGoodsId" parameterType="com.malidong.seckill.pojo.SeckillGoods">
+        update t_seckill_goods set stock_count=#{stockCount} where goods_id=#{goodsId}
+    </update>
+    <select id="selectByGoodsId" resultType="com.malidong.seckill.pojo.SeckillGoods">
+        select * from t_seckill_goods where goods_id=#{goodsId}
+    </select>
 </mapper>

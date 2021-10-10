@@ -17,5 +17,10 @@
         <result column="pay_date" property="payDate" />
     </resultMap>
 
+    <insert id="insertAll" parameterType="com.malidong.seckill.pojo.Order" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into t_order(user_id, goods_id, delivery_addr_id, goods_name, goods_count, goods_price, order_channel, status, create_date, pay_date)
+        values (#{userId}, #{goodsId}, #{deliveryAddrId}, #{goodsName}, #{goodsCount}, #{goodsPrice},
+        #{orderChannel}, #{status}, #{createDate}, #{payDate})
+    </insert>
 
 </mapper>
