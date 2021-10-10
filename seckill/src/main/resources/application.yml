@@ -1,0 +1,40 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.10:3306/seckill?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+      pool-name: DateHikariCP
+      connection-test-query: SELECT 1
+      auto-commit: true
+
+  redis:
+    host: 192.168.56.10
+    port: 6379
+    database: 0
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 10000ms
+        max-idle: 8
+        min-idle: 5
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.malidong.seckill.pojo
+
+logging:
+  level:
+    com.malidong.seckill: debug
+
+server:
+  port: 80
+
+
