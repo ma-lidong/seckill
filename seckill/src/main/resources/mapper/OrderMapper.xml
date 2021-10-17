@@ -22,5 +22,8 @@
         values (#{userId}, #{goodsId}, #{deliveryAddrId}, #{goodsName}, #{goodsCount}, #{goodsPrice},
         #{orderChannel}, #{status}, #{createDate}, #{payDate})
     </insert>
+    <select id="selectById" resultType="com.malidong.seckill.pojo.Order">
+        select * from t_order where id = #{orderId}
+    </select>
 
 </mapper>

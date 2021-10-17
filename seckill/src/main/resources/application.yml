@@ -1,4 +1,38 @@
 spring:
+
+  rabbitmq:
+    host: 192.168.56.10
+    username: guest
+    password: guest
+    virtual-host: /
+    port: 5672
+    listener:
+      simple:
+        concurrency: 10
+        max-concurrency: 10
+        prefetch: 1
+        auto-startup: true
+        default-requeue-rejected: true
+    template:
+      retry:
+        enabled: true
+        initial-interval: 1000ms
+        max-attempts: 3
+        max-interval: 10000ms
+        multiplier: 1
+
+  resources:
+    add-mappings: true
+    cache:
+      cachecontrol:
+        max-age: 3600
+    chain:
+      cache: true
+      enabled: true
+      compressed: true
+      html-application-cache: true
+    static-locations: classpath:/static/
+
   thymeleaf:
     cache: false
 

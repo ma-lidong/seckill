@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SeckillGoodsMapper {
     SeckillGoods selectByGoodsId(Long goodsId);
-    boolean updateGoodsId(SeckillGoods seckillGoods);
+    boolean updateGoodsId(Long goodsId);
 }
